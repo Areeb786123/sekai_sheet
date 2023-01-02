@@ -1,4 +1,4 @@
-package com.areeb.sekaisheet
+package com.areeb.sekaisheet.ui.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
