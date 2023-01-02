@@ -1,3 +1,3 @@
 # sekai_sheet
 
-Wallpaper and enjoy ad free experince peroid
+Wallpaper app  and enjoy ad free experince 
