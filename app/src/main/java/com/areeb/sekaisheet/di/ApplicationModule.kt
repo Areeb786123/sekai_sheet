@@ -19,7 +19,6 @@ object ApplicationModule {
     ): HomeApi {
         return remoteDataSource.buildApi(
             HomeApi::class.java,
-            "GVcyqnDgVfwbXvnkSUBIi1D-WnJ6QLhXg-fZKeqlyvY",
             "https://api.unsplash.com/"
         )
     }

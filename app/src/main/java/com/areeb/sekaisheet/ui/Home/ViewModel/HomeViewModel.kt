@@ -26,26 +26,26 @@ class HomeViewModel @Inject constructor(
     val wallpaper: LiveData<WallpaperResponseDto>
         get() = _wallpaper
 
-     fun getWallpaper() {
+    init {
+        getWallpaper()
+    }
+
+    private fun getWallpaper() {
         viewModelScope.launch {
-            Log.e("ViewModelSS", "ViewModel is called")
             repository.getAllWallpapers()
                 .catch { exception ->
                     Log.e(TAG, exception.toString())
                 }.collect {
-                    Log.e("ansX", it.toString())
                     setWallpaperResponse(it)
                 }
         }
     }
 
     private fun setWallpaperResponse(resource: Resource<WallpaperResponseDto>) {
-        if (resource is Resource.Success){
+        if (resource is Resource.Success) {
             resource.data.let {
                 _wallpaper.value = it
-                Log.e("ansXX", it.toString())
             }
         }
-
     }
 }

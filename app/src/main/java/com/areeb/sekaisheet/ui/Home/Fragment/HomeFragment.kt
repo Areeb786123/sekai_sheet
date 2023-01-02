@@ -18,11 +18,6 @@ class HomeFragment : Fragment() {
     private var _fragmentBinding: FragmentHomeBinding? = null
     private val fragmentBinding get() = _fragmentBinding!!
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        viewModel.getWallpaper()
-        setObserver()
-    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -35,11 +30,14 @@ class HomeFragment : Fragment() {
         return _fragmentBinding?.root
     }
 
-    private fun setObserver() {
-        Log.e("ii","I frago is called ")
-        viewModel.wallpaper.observe(viewLifecycleOwner) {
-            Log.e("ansAA", it.toString())
-            Log.e("ansAAA", "inside aaa")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        observer()
+    }
+
+    private fun observer() {
+        viewModel.wallpaper.observe(viewLifecycleOwner){
+            Log.e("ansAreeb", it.toString())
         }
     }
 }
