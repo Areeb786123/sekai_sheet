@@ -1,13 +1,14 @@
 package com.areeb.sekaisheet.data.network.remote.api.home
 
-import com.areeb.sekaisheet.data.models.Wallpaper.WallpaperResponseDto
+import com.areeb.sekaisheet.data.models.unsplashModels.WallpaperUnSplashDto
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface HomeApi {
-    companion object {
-        private const val client_id = "tnV-FAsxWgslcb_CTGIWKQoifqnUM8iG71HO8nTiz3M"
-    }
 
-    @GET("photos/?client_id=$client_id")
-    suspend fun getWallpaper(): WallpaperResponseDto
+    @GET("photos")
+    suspend fun getWallpaper(
+        @Query("page") page: Int,
+        @Query("per_page") per_page: Int
+    ): WallpaperUnSplashDto
 }
