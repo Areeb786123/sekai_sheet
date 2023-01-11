@@ -12,6 +12,6 @@ class HomeViewHolder(private val bindingAdapter: HomeItemBinding) :
 
     fun bind(wallpaperDto: WallpaperUnSplashDtoItem) {
         this.wallpaperResponseDto = wallpaperDto
-        setImageView(bindingAdapter.homeItemImageView, wallpaperResponseDto.urls.raw)
+        setImageView(bindingAdapter.homeItemImageView, wallpaperResponseDto.urls.regular)
     }
 }

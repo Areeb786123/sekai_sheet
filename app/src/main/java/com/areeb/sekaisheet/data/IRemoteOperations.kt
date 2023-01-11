@@ -1,8 +1,9 @@
-package com.areeb.sekaisheet.data
-
-import com.areeb.sekaisheet.data.models.Wallpaper.WallpaperResponseDto
-import com.areeb.sekaisheet.data.models.unsplashModels.WallpaperUnSplashDtoItem
-
-interface IRemoteOperations {
-    suspend fun getWallpapers(): Resource<WallpaperUnSplashDtoItem>
-}
+//package com.areeb.sekaisheet.data
+//
+//import androidx.paging.Pager
+//import androidx.paging.PagingData
+//import com.areeb.sekaisheet.data.models.unsplashModels.WallpaperUnSplashDtoItem
+//import java.util.concurrent.Flow
+//
+//interface IRemoteOperations {}
+//
