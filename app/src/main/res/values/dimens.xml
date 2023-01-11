@@ -61,11 +61,13 @@
     <dimen name="size_380">380dp</dimen>
     <dimen name="size_300">300dp</dimen>
     <dimen name="size_176">176dp</dimen>
+    <dimen name="size_126">126dp</dimen>
     <dimen name="size_200">200dp</dimen>
     <dimen name="size_256">256dp</dimen>
     <dimen name="size_600">600dp</dimen>
     <dimen name="size_42">42dp</dimen>
     <dimen name="size_190">190dp</dimen>
+    <dimen name="size_250">250dp</dimen>
     <dimen name="size_negative_800">-800dp</dimen>
     <dimen name="size_142">142dp</dimen>
     <dimen name="size_140">140dp</dimen>

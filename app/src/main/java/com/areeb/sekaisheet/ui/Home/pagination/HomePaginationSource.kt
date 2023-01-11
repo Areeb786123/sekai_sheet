@@ -1,6 +1,5 @@
 package com.areeb.sekaisheet.ui.Home.pagination
 
-import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.areeb.sekaisheet.data.models.unsplashModels.WallpaperUnSplashDtoItem
@@ -20,12 +19,10 @@ class HomePaginationSource(private val homeApi: HomeApi) :
             val position = params.key ?: 1
             val lastPosition = params.loadSize
             val response = homeApi.getWallpaper(position, lastPosition)
-            Log.e("valueResponse", response.unSplashResponse.toString())
-
             return LoadResult.Page(
-                data = response.unSplashResponse,
+                data = response.filter { !it.premium },
                 prevKey = if (position == 1) null else position - 1,
-                nextKey = if (response.unSplashResponse.size < params.loadSize) {
+                nextKey = if (response.isEmpty()) {
                     null
                 } else position + 1
             )

@@ -47,7 +47,6 @@ class HomeFragment : Fragment() {
     private fun observer() {
         viewModel.unSplashWallpaperList.observe(viewLifecycleOwner) {
             homeAdapter?.submitData(viewLifecycleOwner.lifecycle, it)
-            Log.e("testData" , it.toString())
         }
     }
 }

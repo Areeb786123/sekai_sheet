@@ -6,14 +6,15 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
     <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/size_166"
-        android:layout_height="@dimen/size_256"
+        android:layout_width="@dimen/size_140"
+        android:layout_height="@dimen/size_250"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="@dimen/size_16"
         android:layout_marginTop="@dimen/size_10"
-        android:layout_marginEnd="@dimen/size_16"
+        android:layout_marginEnd="@dimen/size_20"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="@dimen/size_12">
         <ImageView
             android:id="@+id/homeItemImageView"
