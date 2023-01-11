@@ -1,10 +1,9 @@
 package com.areeb.sekaisheet.data.repository.home
 
 import androidx.paging.*
-import com.areeb.sekaisheet.data.models.unsplashModels.WallpaperUnSplashDtoItem
 import com.areeb.sekaisheet.data.network.remote.api.home.HomeApi
 import com.areeb.sekaisheet.ui.Home.pagination.HomePaginationSource
-import kotlinx.coroutines.flow.Flow
+import com.areeb.sekaisheet.utils.Constants.ApiObjects.Companion.TRENDING
 import javax.inject.Inject
 
 class HomeRepository @Inject constructor(
@@ -19,10 +18,9 @@ class HomeRepository @Inject constructor(
 //        }.flowOn(Dispatchers.IO)
 //    }
 
+    // Trending will be default value because Unsplash didn't allow to use their base API ..
     fun getAllWallpapers() = Pager(
         config = PagingConfig(pageSize = 20, maxSize = 100),
-        pagingSourceFactory = { HomePaginationSource(homeApi) }
+        pagingSourceFactory = { HomePaginationSource(TRENDING, homeApi) }
     ).liveData
-
-
 }

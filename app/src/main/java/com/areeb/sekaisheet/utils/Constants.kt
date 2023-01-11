@@ -4,6 +4,20 @@ interface Constants {
     companion object {
         const val SEKAISHEET_KEY = "sekaiSheet_key"
     }
+
+    interface ApiObjects {
+        companion object {
+            const val CLIENT_ID = "tnV-FAsxWgslcb_CTGIWKQoifqnUM8iG71HO8nTiz3M"
+            const val TRENDING = "trending"
+        }
+    }
+
+    interface ActivityToFragment {
+        companion object {
+            const val WALLPAPER_ID = "wallpaperId"
+        }
+    }
+
     interface StatusCode {
         companion object {
             const val NO_CONTENT = 204
