@@ -1,4 +1,5 @@
 package com.areeb.sekaisheet.ui.base.fragment
 
-class BaseFragment {
-}
+import androidx.fragment.app.Fragment
+
+open class BaseFragment : Fragment()

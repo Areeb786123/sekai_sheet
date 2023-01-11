@@ -1,7 +1,6 @@
 package com.areeb.sekaisheet.ui.Home.Fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.areeb.sekaisheet.ui.Home.Adapter.HomeAdapter
 import com.areeb.sekaisheet.ui.Home.ViewModel.HomeViewModel
-import com.bumptech.glide.Glide.init
+import com.areeb.sekaisheet.ui.common.itemClick.ItemClickListener
+import com.areeb.sekaisheet.ui.homeDetail.activity.HomeDetailActivity
 import com.example.sekaisheet.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -40,7 +40,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun init() {
-        homeAdapter = HomeAdapter()
+        homeAdapter = HomeAdapter(
+            ItemClickListener {
+                onWallpaperSelectClick(it.id)
+            }
+        )
         fragmentBinding.homeRecyclerView.adapter = homeAdapter
     }
 
@@ -48,5 +52,9 @@ class HomeFragment : Fragment() {
         viewModel.unSplashWallpaperList.observe(viewLifecycleOwner) {
             homeAdapter?.submitData(viewLifecycleOwner.lifecycle, it)
         }
+    }
+
+    private fun onWallpaperSelectClick(wallpaperId: String) {
+        HomeDetailActivity.newIntent(requireContext(), wallpaperId)
     }
 }

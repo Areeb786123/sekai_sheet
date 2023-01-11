@@ -19,7 +19,7 @@ object ApplicationModule {
     ): HomeApi {
         return remoteDataSource.buildApi(
             HomeApi::class.java,
-            "https://unsplash.com/napi/"
+            "https://api.unsplash.com/"
         )
     }
 }
