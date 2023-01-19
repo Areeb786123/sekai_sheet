@@ -4,17 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.areeb.sekaisheet.ui.Home.Adapter.HomeAdapter
 import com.areeb.sekaisheet.ui.Home.ViewModel.HomeViewModel
+import com.areeb.sekaisheet.ui.base.fragment.BaseFragment
 import com.areeb.sekaisheet.ui.common.itemClick.ItemClickListener
 import com.areeb.sekaisheet.ui.homeDetail.activity.HomeDetailActivity
 import com.example.sekaisheet.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment(), View.OnClickListener {
 
     private val viewModel: HomeViewModel by viewModels()
     private var _fragmentBinding: FragmentHomeBinding? = null
@@ -54,7 +54,24 @@ class HomeFragment : Fragment() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        setOnViewClickListener()
+    }
+
     private fun onWallpaperSelectClick(wallpaperId: String) {
         HomeDetailActivity.newIntent(requireContext(), wallpaperId)
+    }
+
+    override fun onClick(view: View?) {
+        when (view?.id) {
+            fragmentBinding.searchAnimatedView.id -> {
+                onSearchClick()
+            }
+        }
+    }
+
+    private fun setOnViewClickListener() {
+        fragmentBinding.searchAnimatedView.setOnClickListener(this)
     }
 }
