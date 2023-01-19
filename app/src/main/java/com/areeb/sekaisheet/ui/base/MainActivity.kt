@@ -1,6 +1,7 @@
 package com.areeb.sekaisheet.ui.base
 
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
@@ -30,12 +31,5 @@ open class MainActivity : AppCompatActivity() {
         isFullScreen: Boolean
     ) {
         binding.bottomNav.visible(isBottomVisible)
-
-        if (isFullScreen) {
-            window.setFlags(
-                FLAG_FULLSCREEN,
-                FLAG_FULLSCREEN
-            )
-        }
     }
 }
