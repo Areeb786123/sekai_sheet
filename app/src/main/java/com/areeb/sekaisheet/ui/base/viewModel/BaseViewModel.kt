@@ -1,14 +1,21 @@
 package com.areeb.sekaisheet.ui.base.viewModel
 
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.areeb.sekaisheet.data.Resource
+import com.areeb.sekaisheet.ui.homeDetail.dialog.ProgressDialog
+import javax.inject.Inject
+import kotlin.coroutines.coroutineContext
 
 open class BaseViewModel : ViewModel() {
     companion object {
         private const val TAG = " baseViewModel"
     }
+
+    @Inject
+    lateinit var progressDialog: ProgressDialog
 
     private val _resourceStatus = MutableLiveData<Resource<Any>?>()
     val resourceStatus: LiveData<Resource<Any>?>
@@ -29,5 +36,13 @@ open class BaseViewModel : ViewModel() {
             null,
             error
         )
+    }
+
+    fun showProgressDialog(fragmentManager: FragmentManager) {
+        progressDialog.show(fragmentManager, TAG)
+    }
+
+    fun removeProgressDialog() {
+        progressDialog.dismiss()
     }
 }
