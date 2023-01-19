@@ -16,14 +16,84 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/setHomeScreenImageView"
+        android:layout_width="@dimen/size_50"
+        android:layout_height="@dimen/size_50"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="@dimen/size_16"
+        app:cardBackgroundColor="@color/eighty_percent_transparent"
+        app:cardCornerRadius="@dimen/size_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="@dimen/size_10"
+            android:layout_marginEnd="@dimen/size_10"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/wallpaperImage"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_home_set" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/setDownloadScreenImageView"
+        android:layout_width="@dimen/size_50"
+        android:layout_height="@dimen/size_50"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="@dimen/size_10"
+        android:layout_marginBottom="@dimen/size_16"
+        app:cardBackgroundColor="@color/eighty_percent_transparent"
+        app:cardCornerRadius="@dimen/size_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="@dimen/size_10"
+            android:layout_marginEnd="@dimen/size_10"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/wallpaperImage"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_download_btn" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/setLockScreenImageView"
+        android:layout_width="@dimen/size_50"
+        android:layout_height="@dimen/size_50"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="@dimen/size_16"
+        app:cardBackgroundColor="@color/eighty_percent_transparent"
+        app:cardCornerRadius="@dimen/size_12"
+        app:layout_constraintBottom_toTopOf="@+id/setHomeScreenImageView"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="@dimen/size_10"
+            android:layout_marginEnd="@dimen/size_10"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/wallpaperImage"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_lock_set" />
+    </androidx.cardview.widget.CardView>
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/progressBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/wallpaper_loading_animation" />

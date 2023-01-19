@@ -5,20 +5,22 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.areeb.sekaisheet.data.Resource
 import com.areeb.sekaisheet.ui.base.fragment.BaseFragment
-import com.areeb.sekaisheet.ui.homeDetail.vewModel.HomeDetailViewModel
+import com.areeb.sekaisheet.ui.homeDetail.viewModel.HomeDetailViewModel
 import com.areeb.sekaisheet.utils.setImageView
 import com.example.sekaisheet.databinding.FragmentHomeDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeDetailFragment : BaseFragment() {
+class HomeDetailFragment : BaseFragment(), View.OnClickListener {
 
     companion object {
         private const val TAG = "DetailFragment"
     }
+
     private val viewModel: HomeDetailViewModel by viewModels()
     private var _fragmentBinding: FragmentHomeDetailBinding? = null
     private val fragmentBinding get() = _fragmentBinding!!
@@ -72,5 +74,27 @@ class HomeDetailFragment : BaseFragment() {
                 Log.e("Tag", TAG)
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setObserver()
+        setViewOnClickListener()
+    }
+    override fun onClick(view: View) {
+        when (view.id) {
+            fragmentBinding.setDownloadScreenImageView.id -> {
+                Toast.makeText(context, "This feature will available soon", Toast.LENGTH_SHORT).show()
+            }
+            fragmentBinding.setHomeScreenImageView.id -> {
+                context?.let { viewModel.setWallpaperToHomeScreen(it) }
+            }
+        }
+    }
+
+    private fun setViewOnClickListener() {
+        fragmentBinding.setHomeScreenImageView.setOnClickListener(this)
+        fragmentBinding.setLockScreenImageView.setOnClickListener(this)
+        fragmentBinding.setDownloadScreenImageView.setOnClickListener(this)
     }
 }

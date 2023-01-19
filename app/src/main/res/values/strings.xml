@@ -4,4 +4,5 @@
     <string name="search_hint">Search Kabegami 壁紙 here</string>
     <string name="appName">SekaiSheet</string>
     <string name="wallpaperImage">Wallpaper Image</string>
+    <string name = "wallpaperSetSuccessfully"> Wallpaper Set Successfully ❤️</string>
 </resources>

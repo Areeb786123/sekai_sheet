@@ -17,6 +17,8 @@ interface HomeApi {
         @Query("per_page") per_page: Int
     ): WallpaperUnSplashDto
 
+    //get image for single Id
     @GET("photos/{id}/?client_id=$CLIENT_ID")
     suspend fun getWallpaperById(@Path("id") type: String): WallpaperUnSplashDtoItem
+
 }
