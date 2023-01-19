@@ -1,11 +1,13 @@
 package com.areeb.sekaisheet.ui.homeDetail.fragment
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.viewModels
 import com.areeb.sekaisheet.data.Resource
 import com.areeb.sekaisheet.ui.base.fragment.BaseFragment
@@ -81,14 +83,24 @@ class HomeDetailFragment : BaseFragment(), View.OnClickListener {
         setObserver()
         setViewOnClickListener()
     }
+
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onClick(view: View) {
         when (view.id) {
             fragmentBinding.setDownloadScreenImageView.id -> {
-                context?.let { viewModel.showSetWallpaperCountDown(it) }
-                Toast.makeText(context, "This feature will available soon", Toast.LENGTH_SHORT).show()
+                context?.let {
+                    activity?.supportFragmentManager?.let { fragmentManager ->
+                        viewModel.showSetWallpaperCountDown(
+                            it,
+                            fragmentManager
+                        )
+                    }
+                }
+                Toast.makeText(context, "This feature will available soon", Toast.LENGTH_SHORT)
+                    .show()
             }
             fragmentBinding.setHomeScreenImageView.id -> {
-                context?.let { viewModel.setWallpaperToHomeScreen(it) }
+                context?.let { activity?.let { activity -> viewModel.setWallpaperToHomeScreen(it, activity.supportFragmentManager) } }
             }
         }
     }
