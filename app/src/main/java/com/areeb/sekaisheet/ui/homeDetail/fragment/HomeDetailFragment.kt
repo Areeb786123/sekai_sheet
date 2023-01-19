@@ -84,6 +84,7 @@ class HomeDetailFragment : BaseFragment(), View.OnClickListener {
     override fun onClick(view: View) {
         when (view.id) {
             fragmentBinding.setDownloadScreenImageView.id -> {
+                context?.let { viewModel.showSetWallpaperCountDown(it) }
                 Toast.makeText(context, "This feature will available soon", Toast.LENGTH_SHORT).show()
             }
             fragmentBinding.setHomeScreenImageView.id -> {
