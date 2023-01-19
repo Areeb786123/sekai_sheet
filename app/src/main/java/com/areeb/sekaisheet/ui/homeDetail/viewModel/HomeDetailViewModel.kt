@@ -78,7 +78,11 @@ class HomeDetailViewModel @Inject constructor(
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
-    fun setWallpaperToHomeScreen(context: Context, fragmentManager: FragmentManager) {
+    fun setWallpaperToHomeScreen(
+        context: Context,
+        fragmentManager: FragmentManager,
+        isHomeScreen: Boolean
+    ) {
         showProgressDialog(fragmentManager)
         viewModelScope.launch {
             val bitmap = withContext(Dispatchers.IO) {
@@ -90,19 +94,17 @@ class HomeDetailViewModel @Inject constructor(
 
             }
 
-            WallpaperManager.getInstance(context)
-                .setBitmap(bitmap, null, true, WallpaperManager.FLAG_SYSTEM)
+            if (isHomeScreen) {
+                WallpaperManager.getInstance(context)
+                    .setBitmap(bitmap, null, true, WallpaperManager.FLAG_SYSTEM)
+            } else {
+                WallpaperManager.getInstance(context)
+                    .setBitmap(bitmap, null, true, WallpaperManager.FLAG_LOCK)
+            }
             Toast.makeText(context, "Wallpaper Set Successfully ❤️ ", Toast.LENGTH_SHORT).show()
+
 
         }
     }
-
-    fun showSetWallpaperCountDown(context: Context, fragmentManager: FragmentManager) {
-
-        showProgressDialog(fragmentManager)
-
-
-    }
-
 
 }

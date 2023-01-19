@@ -44,5 +44,4 @@ class ProgressDialog @Inject constructor() : DialogFragment() {
             dismiss()
         }
     }
-
 }
