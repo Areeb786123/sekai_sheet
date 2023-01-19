@@ -88,20 +88,38 @@ class HomeDetailFragment : BaseFragment(), View.OnClickListener {
     override fun onClick(view: View) {
         when (view.id) {
             fragmentBinding.setDownloadScreenImageView.id -> {
-                context?.let {
-                    activity?.supportFragmentManager?.let { fragmentManager ->
-                        viewModel.showSetWallpaperCountDown(
-                            it,
-                            fragmentManager
-                        )
-                    }
-                }
-                Toast.makeText(context, "This feature will available soon", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    context,
+                    "This feature will available soon 😅",
+                    Toast.LENGTH_SHORT
+                )
                     .show()
             }
             fragmentBinding.setHomeScreenImageView.id -> {
-                context?.let { activity?.let { activity -> viewModel.setWallpaperToHomeScreen(it, activity.supportFragmentManager) } }
+                context?.let {
+                    activity?.let { activity ->
+                        viewModel.setWallpaperToHomeScreen(
+                            it,
+                            activity.supportFragmentManager,
+                            true
+                        )
+                    }
+                }
             }
+
+            fragmentBinding.setLockScreenImageView.id -> {
+                context?.let {
+                    activity?.let { activity ->
+                        viewModel.setWallpaperToHomeScreen(
+                            it,
+                            activity.supportFragmentManager,
+                            false
+                        )
+
+                    }
+                }
+            }
+
         }
     }
 

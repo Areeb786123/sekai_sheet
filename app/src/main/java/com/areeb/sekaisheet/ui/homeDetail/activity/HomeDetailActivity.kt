@@ -11,7 +11,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeDetailActivity : MainActivity() {
-
     companion object {
         private const val TAG = "homeDetailActivity"
 
