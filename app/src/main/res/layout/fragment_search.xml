@@ -26,18 +26,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/size_16"
+        android:layout_marginTop="@dimen/size_20"
+        android:layout_marginEnd="@dimen/size_10"
         android:background="@drawable/search_background"
         app:closeIcon="@null"
         app:commitIcon="@drawable/ic_search"
         app:defaultQueryHint="@string/searchWallpapers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchTextView"
         app:queryBackground="@drawable/search_background"
         app:queryHint="@string/searchWallpapers"
         app:searchHintIcon="@null"
         app:searchIcon="@null"
-        android:layout_marginTop="@dimen/size_20"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="@dimen/size_10"
-        app:layout_constraintTop_toBottomOf="@+id/searchTextView"
         app:showDividers="none" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_14"
+        android:layout_marginEnd="@dimen/size_10"
+        android:isScrollContainer="true"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchView"
+        app:spanCount="2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
