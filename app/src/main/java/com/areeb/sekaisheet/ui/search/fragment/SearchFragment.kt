@@ -13,6 +13,7 @@ import com.areeb.sekaisheet.ui.base.fragment.BaseFragment
 import com.areeb.sekaisheet.ui.common.itemClick.ItemClickListener
 import com.areeb.sekaisheet.ui.homeDetail.activity.HomeDetailActivity
 import com.areeb.sekaisheet.ui.search.viewModel.SearchViewModel
+import com.areeb.sekaisheet.utils.visible
 import com.example.sekaisheet.databinding.FragmentSearchBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -44,6 +45,7 @@ class SearchFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         setObserver()
         init()
+        searchQuery()
     }
 
     private fun init() {
@@ -58,8 +60,13 @@ class SearchFragment : BaseFragment() {
     private fun setObserver() {
         viewModel.getSearchQueryList.observe(viewLifecycleOwner) {
             adapter?.submitData(viewLifecycleOwner.lifecycle, it)
-        }
+            fragmentBinding.searchAnimatedView.visible(false)
+            fragmentBinding.searchRecyclerView.visible(true)
 
+        }
+    }
+
+    private fun searchQuery() {
         fragmentBinding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 query?.let { viewModel.setWallpaper(it) }

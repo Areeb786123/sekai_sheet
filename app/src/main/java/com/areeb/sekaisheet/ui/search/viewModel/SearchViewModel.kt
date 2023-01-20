@@ -14,7 +14,7 @@ class SearchViewModel @Inject constructor(
     private val repository: SearchRepository
 ) : BaseViewModel() {
 
-    private val _searchQuery = MutableLiveData("")
+    private val _searchQuery = MutableLiveData<String>()
 
     val getSearchQueryList = _searchQuery.switchMap {
         repository.getSearchedWallpaper(it).cachedIn(viewModelScope)
