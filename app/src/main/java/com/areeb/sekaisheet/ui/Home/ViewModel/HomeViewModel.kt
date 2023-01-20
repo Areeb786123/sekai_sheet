@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val repository: HomeRepository
+   repository: HomeRepository
 ) : ViewModel() {
 
     val unSplashWallpaperList = repository.getAllWallpapers().cachedIn(viewModelScope)

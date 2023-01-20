@@ -59,7 +59,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
         setOnViewClickListener()
     }
 
-    private fun onWallpaperSelectClick(wallpaperId: String) {
+    fun onWallpaperSelectClick(wallpaperId: String) {
         HomeDetailActivity.newIntent(requireContext(), wallpaperId)
     }
 

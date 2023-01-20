@@ -9,7 +9,7 @@ import retrofit2.http.Query
 
 interface HomeApi {
 
-//    @Headers("Accept-Version: v1", "Authorization: Client-ID $CLIENT_ID")
+    //    @Headers("Accept-Version: v1", "Authorization: Client-ID $CLIENT_ID")
     @GET("search/photos/?client_id=$CLIENT_ID")
     suspend fun getWallpaper(
         @Query("query") query: String,
@@ -20,5 +20,4 @@ interface HomeApi {
     //get image for single Id
     @GET("photos/{id}/?client_id=$CLIENT_ID")
     suspend fun getWallpaperById(@Path("id") type: String): WallpaperUnSplashDtoItem
-
 }

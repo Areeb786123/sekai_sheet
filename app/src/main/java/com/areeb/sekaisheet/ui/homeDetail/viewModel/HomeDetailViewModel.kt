@@ -1,20 +1,11 @@
 package com.areeb.sekaisheet.ui.homeDetail.viewModel
 
-import android.app.AlertDialog
-import android.app.Dialog
 import android.app.WallpaperManager
 import android.content.Context
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.Handler
-import android.provider.MediaStore
-import android.util.Log
-import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -25,8 +16,6 @@ import com.areeb.sekaisheet.data.repository.homeDetailRepo.HomeDetailRepository
 import com.areeb.sekaisheet.ui.base.viewModel.BaseViewModel
 import com.areeb.sekaisheet.utils.Constants.ActivityToFragment.Companion.WALLPAPER_ID
 import com.bumptech.glide.Glide
-import com.example.sekaisheet.R
-import com.example.sekaisheet.databinding.AlterDialogueLayoutBinding
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
