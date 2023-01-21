@@ -24,7 +24,7 @@ class HomeViewHolder(private val bindingAdapter: HomeItemBinding) :
         this.wallpaperResponseDto = wallpaperDto
         this.clickListener = clickListener
 
-        setImageView(bindingAdapter.homeItemImageView, wallpaperResponseDto.urls.regular)
+        setImageView(bindingAdapter.homeItemImageView, wallpaperResponseDto.urls.regular, bindingAdapter.progress)
     }
 
     override fun onClick(view: View?) {

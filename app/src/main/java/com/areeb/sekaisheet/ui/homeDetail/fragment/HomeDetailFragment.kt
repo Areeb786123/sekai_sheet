@@ -50,7 +50,7 @@ class HomeDetailFragment : BaseFragment(), View.OnClickListener {
 
     private fun setObserver() {
         viewModel.wallpaperToSet.observe(viewLifecycleOwner) { wallpaperUrl ->
-            setImageView(fragmentBinding.wallpaperToSetImageView, wallpaperUrl)
+            setImageView(fragmentBinding.wallpaperToSetImageView, wallpaperUrl,fragmentBinding.progressBar)
         }
 
         viewModel.resourceStatus.observe(viewLifecycleOwner) {
