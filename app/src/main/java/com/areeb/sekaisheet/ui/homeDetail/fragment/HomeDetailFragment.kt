@@ -11,10 +11,12 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.viewModels
 import com.areeb.sekaisheet.data.Resource
 import com.areeb.sekaisheet.ui.base.fragment.BaseFragment
+import com.areeb.sekaisheet.ui.homeDetail.dialog.ProgressDialog
 import com.areeb.sekaisheet.ui.homeDetail.viewModel.HomeDetailViewModel
 import com.areeb.sekaisheet.utils.setImageView
 import com.example.sekaisheet.databinding.FragmentHomeDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeDetailFragment : BaseFragment(), View.OnClickListener {
@@ -23,20 +25,19 @@ class HomeDetailFragment : BaseFragment(), View.OnClickListener {
         private const val TAG = "DetailFragment"
     }
 
+    @Inject
+    lateinit var progressDialog: ProgressDialog
+
     private val viewModel: HomeDetailViewModel by viewModels()
     private var _fragmentBinding: FragmentHomeDetailBinding? = null
     private val fragmentBinding get() = _fragmentBinding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         _fragmentBinding = FragmentHomeDetailBinding.inflate(
-            layoutInflater,
-            container,
-            false
+            layoutInflater, container, false
         )
 
         return _fragmentBinding?.root
@@ -50,7 +51,9 @@ class HomeDetailFragment : BaseFragment(), View.OnClickListener {
 
     private fun setObserver() {
         viewModel.wallpaperToSet.observe(viewLifecycleOwner) { wallpaperUrl ->
-            setImageView(fragmentBinding.wallpaperToSetImageView, wallpaperUrl,fragmentBinding.progressBar)
+            setImageView(
+                fragmentBinding.wallpaperToSetImageView, wallpaperUrl, fragmentBinding.progressBar
+            )
         }
 
         viewModel.resourceStatus.observe(viewLifecycleOwner) {
@@ -89,19 +92,14 @@ class HomeDetailFragment : BaseFragment(), View.OnClickListener {
         when (view.id) {
             fragmentBinding.setDownloadScreenImageView.id -> {
                 Toast.makeText(
-                    context,
-                    "This feature will available soon 😅",
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
+                    context, "This feature will available soon 😅", Toast.LENGTH_SHORT
+                ).show()
             }
             fragmentBinding.setHomeScreenImageView.id -> {
                 context?.let {
                     activity?.let { activity ->
                         viewModel.setWallpaperToHomeScreen(
-                            it,
-                            activity.supportFragmentManager,
-                            true
+                            it, activity.supportFragmentManager, true
                         )
                     }
                 }
@@ -111,21 +109,22 @@ class HomeDetailFragment : BaseFragment(), View.OnClickListener {
                 context?.let {
                     activity?.let { activity ->
                         viewModel.setWallpaperToHomeScreen(
-                            it,
-                            activity.supportFragmentManager,
-                            false
+                            it, activity.supportFragmentManager, false
                         )
 
                     }
                 }
             }
 
+
         }
     }
+
 
     private fun setViewOnClickListener() {
         fragmentBinding.setHomeScreenImageView.setOnClickListener(this)
         fragmentBinding.setLockScreenImageView.setOnClickListener(this)
         fragmentBinding.setDownloadScreenImageView.setOnClickListener(this)
     }
+
 }
