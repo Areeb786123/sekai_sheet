@@ -1,11 +1,16 @@
 package com.areeb.sekaisheet.ui.homeDetail.viewModel
 
+import android.app.Activity
 import android.app.WallpaperManager
 import android.content.Context
+import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
 import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -15,12 +20,13 @@ import com.areeb.sekaisheet.data.models.unsplashModels.WallpaperUnSplashDtoItem
 import com.areeb.sekaisheet.data.repository.homeDetailRepo.HomeDetailRepository
 import com.areeb.sekaisheet.ui.base.viewModel.BaseViewModel
 import com.areeb.sekaisheet.utils.Constants.ActivityToFragment.Companion.WALLPAPER_ID
-import com.bumptech.glide.Glide
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.net.MalformedURLException
+import java.net.URL
 import javax.inject.Inject
 
 @HiltViewModel
@@ -30,6 +36,7 @@ class HomeDetailViewModel @Inject constructor(
 
     companion object {
         private const val TAG = "homeDetailViewModel"
+        private const val SET_WALLPAPER_REQUEST_CODE = 1112
     }
 
     private val _wallpaperToSet = MutableLiveData<String>()
@@ -70,30 +77,60 @@ class HomeDetailViewModel @Inject constructor(
     fun setWallpaperToHomeScreen(
         context: Context,
         fragmentManager: FragmentManager,
-        isHomeScreen: Boolean
+        isHomeScreen: Boolean,
     ) {
-        showProgressDialog(fragmentManager)
-        viewModelScope.launch {
-            val bitmap = withContext(Dispatchers.IO) {
-                Glide.with(context)
-                    .asBitmap()
-                    .load(_wallpaperToSet.value)
-                    .submit()
-                    .get()
 
+        val permission =
+            ContextCompat.checkSelfPermission(context, android.Manifest.permission.SET_WALLPAPER)
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(
+                context as Activity,
+                arrayOf(android.Manifest.permission.SET_WALLPAPER),
+                SET_WALLPAPER_REQUEST_CODE
+            )
+        } else {
+            showProgressDialog(fragmentManager)
+            viewModelScope.launch {
+                withContext(Dispatchers.IO) {
+                    try {
+                        if (_wallpaperToSet.value != null) {
+                            val inputStream =
+                                withContext(Dispatchers.IO) { URL(_wallpaperToSet.value).openStream() }
+                            val bitmap = BitmapFactory.decodeStream(inputStream)
+                            val wallpaperManager = WallpaperManager.getInstance(context)
+
+                            if (isHomeScreen) {
+                                wallpaperManager.setBitmap(
+                                    bitmap,
+                                    null,
+                                    true,
+                                    WallpaperManager.FLAG_SYSTEM
+                                )
+                            } else {
+                                wallpaperManager.setBitmap(
+                                    bitmap,
+                                    null,
+                                    true,
+                                    WallpaperManager.FLAG_LOCK
+                                )
+                            }
+                        } else {
+                            Toast.makeText(
+                                context,
+                                "Error setting wallpaper: Invalid URL",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    } catch (e: MalformedURLException) {
+                        Toast.makeText(
+                            context,
+                            "Error setting wallpaper: Invalid URL",
+                            Toast.LENGTH_SHORT
+                        ).show()
+
+                    }
+                }
             }
-
-            if (isHomeScreen) {
-                WallpaperManager.getInstance(context)
-                    .setBitmap(bitmap, null, true, WallpaperManager.FLAG_SYSTEM)
-            } else {
-                WallpaperManager.getInstance(context)
-                    .setBitmap(bitmap, null, true, WallpaperManager.FLAG_LOCK)
-            }
-            Toast.makeText(context, "Wallpaper Set Successfully ❤️ ", Toast.LENGTH_SHORT).show()
-
-
         }
     }
-
 }
