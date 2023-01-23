@@ -115,6 +115,11 @@ class HomeDetailViewModel @Inject constructor(
                                 )
                             }
                         }
+                        Toast.makeText(
+                            context,
+                            "Wallpaper Set Successfully",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     } else {
                         Toast.makeText(
                             context,
