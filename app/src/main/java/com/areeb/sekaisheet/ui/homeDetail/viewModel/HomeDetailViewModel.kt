@@ -91,11 +91,11 @@ class HomeDetailViewModel @Inject constructor(
         } else {
             showProgressDialog(fragmentManager)
             viewModelScope.launch {
-                withContext(Dispatchers.IO) {
-                    try {
-                        if (_wallpaperToSet.value != null) {
-                            val inputStream =
-                                withContext(Dispatchers.IO) { URL(_wallpaperToSet.value).openStream() }
+                try {
+                    if (_wallpaperToSet.value != null) {
+                        val inputStream =
+                            withContext(Dispatchers.IO) { URL(_wallpaperToSet.value).openStream() }
+                        withContext(Dispatchers.IO) {
                             val bitmap = BitmapFactory.decodeStream(inputStream)
                             val wallpaperManager = WallpaperManager.getInstance(context)
 
@@ -103,34 +103,35 @@ class HomeDetailViewModel @Inject constructor(
                                 wallpaperManager.setBitmap(
                                     bitmap,
                                     null,
-                                    true,
+                                    false,
                                     WallpaperManager.FLAG_SYSTEM
                                 )
                             } else {
                                 wallpaperManager.setBitmap(
                                     bitmap,
                                     null,
-                                    true,
+                                    false,
                                     WallpaperManager.FLAG_LOCK
                                 )
                             }
-                        } else {
-                            Toast.makeText(
-                                context,
-                                "Error setting wallpaper: Invalid URL",
-                                Toast.LENGTH_SHORT
-                            ).show()
                         }
-                    } catch (e: MalformedURLException) {
+                    } else {
                         Toast.makeText(
                             context,
                             "Error setting wallpaper: Invalid URL",
                             Toast.LENGTH_SHORT
                         ).show()
-
                     }
+                } catch (e: MalformedURLException) {
+                    Toast.makeText(
+                        context,
+                        "Error setting wallpaper: Invalid URL",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
                 }
             }
         }
     }
 }
+

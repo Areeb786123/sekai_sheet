@@ -23,8 +23,8 @@ class HomeDetailActivity : MainActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setHeaderAndFooter(isBottomVisible = false, isFullScreen = true)
         setUpNavigationGraph()
+        setHeaderAndFooter(isBottomVisible = false, isFullScreen = true)
     }
 
     private fun setUpNavigationGraph() {
@@ -41,5 +41,7 @@ class HomeDetailActivity : MainActivity() {
         val navGraph = navController.navInflater.inflate(R.navigation.home_detail_navigation)
 
         navController.setGraph(navGraph, bundle)
+
+        navController.popBackStack()
     }
 }
