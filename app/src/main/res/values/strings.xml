@@ -9,4 +9,11 @@
     <string name="wallpaperSetSuccessfully"> Wallpaper Set Successfully ❤️</string>
     <string name="search">Search Wallpapers </string>
     <string name="searchWallpapers">Search any wallpapers 壁紙 </string>
+    <string name="marvel">Marvel</string>
+    <string name="categories">Categories</string>
+    <string name="anime">Anime</string>
+    <string name="amoled">Amoled</string>
+    <string name="games">Games</string>
+    <string name="nature">Nature</string>
+    <string name="_abstract">Abstract</string>
 </resources>

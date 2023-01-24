@@ -1,14 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/teal_700"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/screenNameTextView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_10"
+        android:fontFamily="@font/amaranth"
+        android:text="@string/categories"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_32"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0"
+        android:layout_marginStart="@dimen/size_12"
+        android:layout_marginTop="@dimen/size_12"
+        android:layout_marginEnd="@dimen/size_12"
+        android:layout_marginBottom="@dimen/size_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/screenNameTextView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_150"
+                android:layout_marginTop="@dimen/size_12"
+                app:cardCornerRadius="@dimen/size_12">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="9.75"
+                    android:contentDescription="@string/categories"
+                    android:scaleType="centerCrop"
+                     />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_18"
+                    android:layout_marginTop="@dimen/size_18"
+                    android:fontFamily="@font/akaya_telivigala"
+                    android:text="@string/anime"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_32"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_150"
+                android:layout_marginTop="@dimen/size_12"
+                app:cardCornerRadius="@dimen/size_12">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="9.75"
+                    android:contentDescription="@string/categories"
+                    android:scaleType="centerCrop"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_18"
+                    android:layout_marginTop="@dimen/size_18"
+                    android:fontFamily="@font/akaya_telivigala"
+                    android:text="@string/marvel"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_32"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_150"
+                android:layout_marginTop="@dimen/size_12"
+                app:cardCornerRadius="@dimen/size_12">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="9.75"
+                    android:contentDescription="@string/categories"
+                    android:scaleType="centerCrop"
+                   />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_18"
+                    android:layout_marginTop="@dimen/size_18"
+                    android:fontFamily="@font/akaya_telivigala"
+                    android:text="@string/amoled"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_32"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_150"
+                android:layout_marginTop="@dimen/size_12"
+                app:cardCornerRadius="@dimen/size_12">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="9.75"
+                    android:contentDescription="@string/categories"
+                    android:scaleType="centerCrop"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_18"
+                    android:layout_marginTop="@dimen/size_18"
+                    android:fontFamily="@font/akaya_telivigala"
+                    android:text="@string/games"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_32"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_150"
+                android:layout_marginTop="@dimen/size_12"
+                app:cardCornerRadius="@dimen/size_12">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="9.75"
+                    android:contentDescription="@string/categories"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_nature" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_18"
+                    android:layout_marginTop="@dimen/size_18"
+                    android:fontFamily="@font/akaya_telivigala"
+                    android:text="@string/nature"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_32"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_150"
+                android:layout_marginTop="@dimen/size_12"
+                app:cardCornerRadius="@dimen/size_12">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="9.99"
+                    android:contentDescription="@string/categories"
+                    android:scaleType="centerCrop"
+                   />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_18"
+                    android:layout_marginTop="@dimen/size_18"
+                    android:fontFamily="@font/akaya_telivigala"
+                    android:text="@string/_abstract"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_32"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
