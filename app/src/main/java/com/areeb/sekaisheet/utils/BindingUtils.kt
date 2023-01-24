@@ -45,7 +45,7 @@ fun setImageView(imageView: ImageView, imageUrl: String?, lotteAnimation: Lottie
             })
             .apply {
                 RequestOptions()
-                    .error(R.drawable.ic_not_able_locate)
+                    .error(R.drawable.not_able_to_relocate)
             }
             .into(imageView)
 

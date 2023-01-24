@@ -22,8 +22,9 @@ class ProgressDialog @Inject constructor() : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        dialog?.setCanceledOnTouchOutside(false)// change it to false
         dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent);
-        dialog?.setCanceledOnTouchOutside(true)// change it to false
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
