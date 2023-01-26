@@ -154,8 +154,7 @@
                     android:layout_height="match_parent"
                     android:alpha="9.75"
                     android:contentDescription="@string/categories"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_nature" />
+                    android:scaleType="centerCrop" />
 
                 <TextView
                     android:layout_width="match_parent"

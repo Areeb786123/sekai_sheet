@@ -93,9 +93,8 @@ class HomeDetailViewModel @Inject constructor(
             viewModelScope.launch {
                 try {
                     if (_wallpaperToSet.value != null) {
-                        val inputStream =
-                            withContext(Dispatchers.IO) { URL(_wallpaperToSet.value).openStream() }
                         withContext(Dispatchers.IO) {
+                            val inputStream = URL(_wallpaperToSet.value).openStream()
                             val bitmap = BitmapFactory.decodeStream(inputStream)
                             val wallpaperManager = WallpaperManager.getInstance(context)
 
@@ -103,18 +102,27 @@ class HomeDetailViewModel @Inject constructor(
                                 wallpaperManager.setBitmap(
                                     bitmap,
                                     null,
-                                    false,
+                                    true,
                                     WallpaperManager.FLAG_SYSTEM
                                 )
                             } else {
                                 wallpaperManager.setBitmap(
                                     bitmap,
                                     null,
-                                    false,
+                                    true,
                                     WallpaperManager.FLAG_LOCK
                                 )
                             }
                         }
+
+                        Toast.makeText(
+                            context,
+                            "Wallpaper set SuccessFully ❤️",
+                            Toast.LENGTH_SHORT
+                        )
+                            .show()
+
+
                     } else {
                         Toast.makeText(
                             context,

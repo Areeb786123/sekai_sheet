@@ -4,8 +4,9 @@
     <string name="search_hint">Search Kabegami 壁紙 here</string>
     <string name="appName">SekaiSheet</string>
     <string name="wallpaperImage">Wallpaper Image</string>
-    <string name="settingUpTitle">Wallpaper is processing 🥳 </string>
-    <string name="settingUpWallpaper">Your highQuality wallpaper is under process to set please hold a little to enjoy 🙃 ❤️.</string>
+    <string name="settingUpTitle">Wallpaper is processing
+    </string>
+    <string name="settingUpWallpaper">Your highQuality wallpaper is under process to set please hold a little to enjoy.</string>
     <string name="wallpaperSetSuccessfully"> Wallpaper Set Successfully ❤️</string>
     <string name="search">Search Wallpapers </string>
     <string name="searchWallpapers">Search any wallpapers 壁紙 </string>
