@@ -17,17 +17,22 @@ class SearchActivity : MainActivity(), NavController.OnDestinationChangedListene
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setHeaderAndFooter(isBottomVisible = false, isFullScreen = true)
         setUpNavigationGraph()
+        setHeaderAndFooter(isBottomVisible = false, isFullScreen = true)
+
     }
 
     private fun setUpNavigationGraph() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+
         val navController = navHostFragment.navController
+
         val navGraph = navController.navInflater.inflate(R.navigation.nav_search)
-        navController.graph = navGraph
-        navController.addOnDestinationChangedListener(this)
+
+        navController.setGraph(navGraph, null)
+
+        navController.popBackStack()
 
     }
 

@@ -22,6 +22,7 @@ open class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(binding.fragmentContainerView.id) as NavHostFragment?
         val navController = navHostFragment!!.navController
         binding.bottomNav.setupWithNavController(navController)
+
     }
 
     fun setHeaderAndFooter(
