@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import com.areeb.sekaisheet.data.Resource
 import com.areeb.sekaisheet.ui.homeDetail.dialog.ProgressDialog
 import javax.inject.Inject
-import kotlin.coroutines.coroutineContext
 
 open class BaseViewModel : ViewModel() {
     companion object {

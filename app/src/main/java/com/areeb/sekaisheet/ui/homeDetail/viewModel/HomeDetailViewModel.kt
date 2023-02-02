@@ -121,8 +121,7 @@ class HomeDetailViewModel @Inject constructor(
                             Toast.LENGTH_SHORT
                         )
                             .show()
-
-
+                        removeProgressDialog()
                     } else {
                         Toast.makeText(
                             context,

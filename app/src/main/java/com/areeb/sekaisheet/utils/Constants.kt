@@ -17,6 +17,11 @@ interface Constants {
             const val WALLPAPER_ID = "wallpaperId"
         }
     }
+    interface  Collection {
+        companion object {
+            const val COLLECTION_FILE = "collection.json"
+        }
+    }
 
     interface StatusCode {
         companion object {
