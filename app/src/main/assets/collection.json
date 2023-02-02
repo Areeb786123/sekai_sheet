@@ -1,0 +1,28 @@
+{
+  "collections": [
+    {
+      "title": "Amoled",
+      "img_url": "url"
+    },
+    {
+      "title": "Anime",
+      "img_url": "url"
+    },
+    {
+      "title": "Marvel",
+      "img_url": "url"
+    },
+    {
+      "title": "Games",
+      "img_url": "url"
+    },
+    {
+      "title": "Nature",
+      "img_url": "url"
+    },
+    {
+      "title": "Abstract",
+      "img_url": "url"
+    }
+  ]
+}
