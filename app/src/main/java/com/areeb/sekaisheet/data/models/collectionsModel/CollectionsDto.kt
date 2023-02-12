@@ -1,3 +1,3 @@
 package com.areeb.sekaisheet.data.models.collectionsModel
 
-class CollectionsDto : ArrayList<CollectionsDtoItem>()
+data class CollectionsDto(val collections: List<CollectionDto>)

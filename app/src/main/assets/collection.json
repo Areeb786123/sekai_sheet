@@ -2,27 +2,27 @@
   "collections": [
     {
       "title": "Amoled",
-      "img_url": "url"
+      "img_url": "https://images.unsplash.com/photo-1502736842968-bcaab72d0700?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80"
     },
     {
       "title": "Anime",
-      "img_url": "url"
+      "img_url": "https://images.unsplash.com/photo-1578632767115-351597cf2477?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
     },
     {
       "title": "Marvel",
-      "img_url": "url"
+      "img_url": "https://images.unsplash.com/photo-1635805739892-ab7b431400f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3BpZGVybWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
     },
     {
       "title": "Games",
-      "img_url": "url"
+      "img_url": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z2FtZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=1000&q=60"
     },
     {
       "title": "Nature",
-      "img_url": "url"
+      "img_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
     },
     {
       "title": "Abstract",
-      "img_url": "url"
+      "img_url": "https://images.unsplash.com/photo-1653419831613-56ed2a1c8ea8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fGFic3RhcmN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
     }
   ]
 }
