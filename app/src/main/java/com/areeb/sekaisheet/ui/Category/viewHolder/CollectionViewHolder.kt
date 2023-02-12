@@ -1,5 +1,7 @@
 package com.areeb.sekaisheet.ui.Category.viewHolder
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.areeb.sekaisheet.utils.setImageView
 import com.example.sekaisheet.databinding.CollectionsItemsBinding
@@ -17,5 +19,17 @@ class CollectionViewHolder(private val bindingAdapter: CollectionsItemsBinding) 
             collectionsDto.img_url,
             bindingAdapter.progress
         )
+    }
+
+    companion object {
+        fun from(parent: ViewGroup): CollectionViewHolder {
+            return CollectionViewHolder(
+                CollectionsItemsBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+            )
+        }
     }
 }

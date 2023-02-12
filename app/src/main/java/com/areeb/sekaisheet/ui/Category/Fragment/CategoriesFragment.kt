@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.areeb.sekaisheet.data.models.collectionsModel.CollectionsDto
+import com.areeb.sekaisheet.ui.Category.adapter.CollectionAdapter
 import com.areeb.sekaisheet.ui.Category.viewModel.CollectionViewModel
 import com.areeb.sekaisheet.ui.base.fragment.BaseFragment
 import com.example.sekaisheet.databinding.FragmentCategoriesBinding
@@ -18,7 +19,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class CategoriesFragment : BaseFragment() {
     private val viewModel: CollectionViewModel by viewModels()
     private var _fragmentBinding: FragmentCategoriesBinding? = null
-    private val fragmentBinding get() = _fragmentBinding
+    private val fragmentBinding get() = _fragmentBinding!!
+    private var collectionAdapter: CollectionAdapter? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,7 +40,7 @@ class CategoriesFragment : BaseFragment() {
         extractCollectionData()
     }
 
-    //Move function later in viewModel and observe with Live data
+    //Move this function later in viewModel and observe with Live data
     private fun extractCollectionData() {
         val jsonString = context?.assets?.open("collection.json")?.bufferedReader().use {
             it?.readText()
@@ -46,6 +48,9 @@ class CategoriesFragment : BaseFragment() {
         val collectionsWrapper = Gson().fromJson(jsonString, CollectionsDto::class.java)
         val collections = collectionsWrapper.collections
         Log.e("dataCollection", collections.toString())
+        val collectionAdapter = CollectionAdapter(collections)
+
+        fragmentBinding.collectionRecyclerView.adapter = collectionAdapter
 
     }
 
