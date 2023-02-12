@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.areeb.sekaisheet.data.models.collectionsModel.CollectionsDto
 import com.areeb.sekaisheet.ui.Category.viewModel.CollectionViewModel
 import com.areeb.sekaisheet.ui.base.fragment.BaseFragment
 import com.example.sekaisheet.databinding.FragmentCategoriesBinding
+import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -29,13 +31,22 @@ class CategoriesFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        observer()
+        init()
     }
 
-    private fun observer() {
-        viewModel.collectionList.observe(viewLifecycleOwner) {
-            Log.e("collectionDataX", it.toString())
+    private fun init() {
+        extractCollectionData()
+    }
+
+    //Move function later in viewModel and observe with Live data
+    private fun extractCollectionData() {
+        val jsonString = context?.assets?.open("collection.json")?.bufferedReader().use {
+            it?.readText()
         }
+        val collectionsWrapper = Gson().fromJson(jsonString, CollectionsDto::class.java)
+        val collections = collectionsWrapper.collections
+        Log.e("dataCollection", collections.toString())
+
     }
 
 }

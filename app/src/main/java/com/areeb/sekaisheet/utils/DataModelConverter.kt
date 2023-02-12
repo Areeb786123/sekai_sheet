@@ -14,12 +14,12 @@ class DataModelConverter @Inject constructor(@ApplicationContext val context: Co
     private val gson = Gson()
 
 
-    fun convertCollectionList(collectionFile: String): List<com.areeb.sekaisheet.data.models.collectionsModel.Collection> {
-        val collectionList = mutableListOf<com.areeb.sekaisheet.data.models.collectionsModel.Collection>()
+    fun convertCollectionList(collectionFile: String): List<com.areeb.sekaisheet.data.models.collectionsModel.CollectionDto> {
+        val collectionList = mutableListOf<com.areeb.sekaisheet.data.models.collectionsModel.CollectionDto>()
         val jsonFileString = getJsonFromAsset(context, collectionFile)
 
         if (jsonFileString != null) {
-            val type = object : TypeToken<List<com.areeb.sekaisheet.data.models.collectionsModel.Collection>>() {}.type
+            val type = object : TypeToken<List<com.areeb.sekaisheet.data.models.collectionsModel.CollectionDto>>() {}.type
             try {
                 collectionList.addAll(gson.fromJson(jsonFileString, type))
             } catch (exception: JsonParseException) {

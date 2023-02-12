@@ -14,9 +14,9 @@ import com.bumptech.glide.request.target.Target
 import com.example.sekaisheet.R
 
 @SuppressLint("CheckResult")
-fun setImageView(imageView: ImageView, imageUrl: String?, lotteAnimation: LottieAnimationView) {
+fun setImageView(imageView: ImageView, imageUrl: String?, lotteAnimation: LottieAnimationView?) {
     imageView.let {
-        lotteAnimation.visible(true)
+        lotteAnimation?.visible(true)
         val imageUri = imageUrl?.toUri()?.buildUpon()?.scheme("https")?.build()
         Glide.with(imageView.context)
             .load(imageUri)
@@ -27,7 +27,7 @@ fun setImageView(imageView: ImageView, imageUrl: String?, lotteAnimation: Lottie
                     target: Target<Drawable>?,
                     isFirstResource: Boolean
                 ): Boolean {
-                    lotteAnimation.visible(true)
+                    lotteAnimation?.visible(true)
                     return true
                 }
 
@@ -38,7 +38,7 @@ fun setImageView(imageView: ImageView, imageUrl: String?, lotteAnimation: Lottie
                     dataSource: DataSource?,
                     isFirstResource: Boolean
                 ): Boolean {
-                    lotteAnimation.visible(false)
+                    lotteAnimation?.visible(false)
                     return false
                 }
 

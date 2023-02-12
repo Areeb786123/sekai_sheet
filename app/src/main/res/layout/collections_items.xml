@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_150"
+    android:layout_marginStart="@dimen/size_10"
+    android:layout_marginTop="@dimen/size_10"
+    android:layout_marginEnd="@dimen/size_10"
+    android:layout_marginBottom="@dimen/size_10"
+    app:cardCornerRadius="@dimen/size_12">
+
+    <ImageView
+        android:id="@+id/collectionImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_nature" />
+
+    <TextView
+        android:id="@+id/collectionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_16"
+        android:layout_marginTop="@dimen/size_20"
+        android:fontFamily="@font/akaya_telivigala"
+        android:text="@string/marvel"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_24"
+        android:textStyle="bold" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_10"
+        android:layout_marginEnd="@dimen/size_10"
+        android:layout_marginBottom="@dimen/size_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/wallpaper_loading_animation" />
+
+</androidx.cardview.widget.CardView>

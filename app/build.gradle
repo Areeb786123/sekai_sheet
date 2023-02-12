@@ -80,6 +80,9 @@ dependencies {
     def paging_version = "3.1.1"
     implementation "androidx.paging:paging-runtime:$paging_version"
 
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+
 
 }
 kapt {
