@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_homeFragment_to_categoriesFragment"
             app:destination="@id/categoriesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_spinnerFragment"
+            app:destination="@id/spinnerFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
@@ -20,4 +23,9 @@
             android:id="@+id/action_categoriesFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/spinnerFragment"
+        android:name="com.areeb.sekaisheet.ui.spiningWheel.fragment.SpinnerFragment"
+        android:label="fragment_spinner"
+        tools:layout="@layout/fragment_spinner" />
 </navigation>

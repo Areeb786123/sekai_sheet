@@ -31,7 +31,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeDetailViewModel @Inject constructor(
-    private val repository: HomeDetailRepository
+    private val repository: HomeDetailRepository,
 ) : BaseViewModel() {
 
     companion object {
@@ -79,14 +79,13 @@ class HomeDetailViewModel @Inject constructor(
         fragmentManager: FragmentManager,
         isHomeScreen: Boolean,
     ) {
-
         val permission =
             ContextCompat.checkSelfPermission(context, android.Manifest.permission.SET_WALLPAPER)
         if (permission != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                 context as Activity,
                 arrayOf(android.Manifest.permission.SET_WALLPAPER),
-                SET_WALLPAPER_REQUEST_CODE
+                SET_WALLPAPER_REQUEST_CODE,
             )
         } else {
             showProgressDialog(fragmentManager)
@@ -103,14 +102,14 @@ class HomeDetailViewModel @Inject constructor(
                                     bitmap,
                                     null,
                                     true,
-                                    WallpaperManager.FLAG_SYSTEM
+                                    WallpaperManager.FLAG_SYSTEM,
                                 )
                             } else {
                                 wallpaperManager.setBitmap(
                                     bitmap,
                                     null,
                                     true,
-                                    WallpaperManager.FLAG_LOCK
+                                    WallpaperManager.FLAG_LOCK,
                                 )
                             }
                         }
@@ -118,7 +117,7 @@ class HomeDetailViewModel @Inject constructor(
                         Toast.makeText(
                             context,
                             "Wallpaper set SuccessFully ❤️",
-                            Toast.LENGTH_SHORT
+                            Toast.LENGTH_SHORT,
                         )
                             .show()
                         removeProgressDialog()
@@ -126,19 +125,17 @@ class HomeDetailViewModel @Inject constructor(
                         Toast.makeText(
                             context,
                             "Error setting wallpaper: Invalid URL",
-                            Toast.LENGTH_SHORT
+                            Toast.LENGTH_SHORT,
                         ).show()
                     }
                 } catch (e: MalformedURLException) {
                     Toast.makeText(
                         context,
                         "Error setting wallpaper: Invalid URL",
-                        Toast.LENGTH_SHORT
+                        Toast.LENGTH_SHORT,
                     ).show()
-
                 }
             }
         }
     }
 }
-

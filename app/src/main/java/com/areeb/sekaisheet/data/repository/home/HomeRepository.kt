@@ -19,5 +19,5 @@ class HomeRepository @Inject constructor(
                 homeApi,
             )
         },
-    ).liveData
+    ).flow
 }

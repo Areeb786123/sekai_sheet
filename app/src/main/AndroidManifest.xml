@@ -21,6 +21,9 @@
         android:theme="@style/Theme.SekaiSheet"
         tools:targetApi="31">
         <activity
+            android:name=".SpinnerActivity"
+            android:exported="false" />
+        <activity
             android:name="com.areeb.sekaisheet.ui.search.activity.SearchActivity"
             android:exported="false">
             <meta-data
