@@ -1,15 +1,18 @@
 package com.areeb.sekaisheet.ui.Home.Fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.areeb.sekaisheet.data.Resource
 import com.areeb.sekaisheet.ui.Home.Adapter.HomeAdapter
 import com.areeb.sekaisheet.ui.Home.ViewModel.HomeViewModel
 import com.areeb.sekaisheet.ui.base.fragment.BaseFragment
 import com.areeb.sekaisheet.ui.common.itemClick.ItemClickListener
 import com.areeb.sekaisheet.ui.homeDetail.activity.HomeDetailActivity
+import com.areeb.sekaisheet.utils.visible
 import com.example.sekaisheet.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,6 +23,10 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
     private var _fragmentBinding: FragmentHomeBinding? = null
     private val fragmentBinding get() = _fragmentBinding!!
     private var homeAdapter: HomeAdapter? = null
+
+    companion object {
+        private const val TAG = "homeFragment"
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,6 +59,9 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
         viewModel.unSplashWallpaperList.observe(viewLifecycleOwner) {
             homeAdapter?.submitData(viewLifecycleOwner.lifecycle, it)
         }
+        viewModel.resourceStatus.observe(viewLifecycleOwner) {
+            it?.let { it1 -> setResourceStatus(it1) }
+        }
     }
 
     override fun onResume() {
@@ -73,5 +83,21 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
 
     private fun setOnViewClickListener() {
         fragmentBinding.searchAnimatedView.setOnClickListener(this)
+    }
+
+    private fun setResourceStatus(resource: Resource<Any?>) {
+        when (resource) {
+            is Resource.Success -> {
+                fragmentBinding.homeRecyclerView.visible(true)
+                fragmentBinding.homeShimmerLayout.visible(false)
+            }
+            is Resource.Loading -> {
+                fragmentBinding.homeRecyclerView.visible(false)
+                fragmentBinding.homeShimmerLayout.visible(true)
+            }
+            else -> {
+                Log.e(TAG, "Some error occur")
+            }
+        }
     }
 }
