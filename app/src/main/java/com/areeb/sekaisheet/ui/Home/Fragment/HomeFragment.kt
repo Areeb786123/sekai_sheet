@@ -24,7 +24,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
@@ -42,8 +42,8 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
     private fun init() {
         homeAdapter = HomeAdapter(
             ItemClickListener {
-                onWallpaperSelectClick(it.id)
-            }
+                onWallpaperSelectedItemClick(it.id)
+            },
         )
         fragmentBinding.homeRecyclerView.adapter = homeAdapter
     }
@@ -59,7 +59,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
         setOnViewClickListener()
     }
 
-    fun onWallpaperSelectClick(wallpaperId: String) {
+    private fun onWallpaperSelectedItemClick(wallpaperId: String) {
         HomeDetailActivity.newIntent(requireContext(), wallpaperId)
     }
 

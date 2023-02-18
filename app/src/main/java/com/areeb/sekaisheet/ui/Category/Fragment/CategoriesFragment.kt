@@ -5,13 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.areeb.sekaisheet.data.models.collectionsModel.CollectionsDto
 import com.areeb.sekaisheet.ui.Category.adapter.CollectionAdapter
 import com.areeb.sekaisheet.ui.Category.viewModel.CollectionViewModel
 import com.areeb.sekaisheet.ui.base.fragment.BaseFragment
 import com.areeb.sekaisheet.ui.common.itemClick.ItemClickListener
+import com.areeb.sekaisheet.utils.CollectionData.collectionTitle
 import com.example.sekaisheet.databinding.FragmentCategoriesBinding
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
@@ -60,6 +60,7 @@ class CategoriesFragment : BaseFragment() {
     }
 
     private fun onItemClick(title: String) {
-        Toast.makeText(requireContext(), title, Toast.LENGTH_SHORT).show()
+        collectionTitle = title
+        safeNavigate(CategoriesFragmentDirections.actionCategoriesFragmentToHomeFragment())
     }
 }

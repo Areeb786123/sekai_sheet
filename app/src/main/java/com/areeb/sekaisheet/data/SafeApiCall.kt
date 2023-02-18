@@ -14,13 +14,13 @@ interface SafeApiCall {
                     Resource.Error(
                         false,
                         throwable.code(),
-                        throwable.response()?.errorBody()
+                        throwable.response()?.errorBody(),
                     )
                 }
                 is NoInternetException, is SocketTimeoutException -> Resource.Error(
                     true,
                     null,
-                    null
+                    null,
                 )
                 else -> Resource.Error(false, null, null)
             }
