@@ -10,10 +10,11 @@ import com.areeb.sekaisheet.data.models.collectionsModel.CollectionsDto
 import com.areeb.sekaisheet.ui.Category.adapter.CollectionAdapter
 import com.areeb.sekaisheet.ui.Category.viewModel.CollectionViewModel
 import com.areeb.sekaisheet.ui.base.fragment.BaseFragment
+import com.areeb.sekaisheet.ui.common.itemClick.ItemClickListener
+import com.areeb.sekaisheet.utils.CollectionData.collectionTitle
 import com.example.sekaisheet.databinding.FragmentCategoriesBinding
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class CategoriesFragment : BaseFragment() {
@@ -24,7 +25,7 @@ class CategoriesFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
         _fragmentBinding = FragmentCategoriesBinding.inflate(layoutInflater, container, false)
@@ -40,7 +41,7 @@ class CategoriesFragment : BaseFragment() {
         extractCollectionData()
     }
 
-    //Move this function later in viewModel and observe with Live data
+    // Move this function later in viewModel and observe with Live data
     private fun extractCollectionData() {
         val jsonString = context?.assets?.open("collection.json")?.bufferedReader().use {
             it?.readText()
@@ -48,10 +49,18 @@ class CategoriesFragment : BaseFragment() {
         val collectionsWrapper = Gson().fromJson(jsonString, CollectionsDto::class.java)
         val collections = collectionsWrapper.collections
         Log.e("dataCollection", collections.toString())
-        val collectionAdapter = CollectionAdapter(collections)
+        collectionAdapter = CollectionAdapter(
+            collections,
+            ItemClickListener { collectionItem ->
+                onItemClick(collectionItem.title.toString())
+            },
+        )
 
         fragmentBinding.collectionRecyclerView.adapter = collectionAdapter
-
     }
 
+    private fun onItemClick(title: String) {
+        collectionTitle = title
+        safeNavigate(CategoriesFragmentDirections.actionCategoriesFragmentToHomeFragment())
+    }
 }

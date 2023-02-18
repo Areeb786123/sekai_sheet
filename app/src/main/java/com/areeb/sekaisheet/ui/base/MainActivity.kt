@@ -12,6 +12,11 @@ import dagger.hilt.android.AndroidEntryPoint
 open class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    companion object {
+        private const val TAG = "Main Activity"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -22,14 +27,12 @@ open class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(binding.fragmentContainerView.id) as NavHostFragment?
         val navController = navHostFragment!!.navController
         binding.bottomNav.setupWithNavController(navController)
-
     }
 
     fun setHeaderAndFooter(
         isBottomVisible: Boolean,
-        isFullScreen: Boolean
+        isFullScreen: Boolean,
     ) {
         binding.bottomNav.visible(isBottomVisible)
     }
-
 }

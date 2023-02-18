@@ -7,11 +7,17 @@ import com.areeb.sekaisheet.utils.Constants.ApiObjects.Companion.TRENDING
 import javax.inject.Inject
 
 class HomeRepository @Inject constructor(
-    private val homeApi: HomeApi
+    private val homeApi: HomeApi,
 ) {
     // Trending will be default value because Unsplash didn't allow to use their base API ..
-    fun getAllWallpapers() = Pager(
+    fun getAllWallpapers(data: String?) = Pager(
         config = PagingConfig(pageSize = 20, maxSize = 100),
-        pagingSourceFactory = { HomePaginationSource(TRENDING, homeApi) }
+
+        pagingSourceFactory = {
+            HomePaginationSource(
+                data ?: TRENDING,
+                homeApi,
+            )
+        },
     ).liveData
 }
