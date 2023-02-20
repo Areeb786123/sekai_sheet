@@ -28,7 +28,16 @@ class SpinnerFragment : Fragment() {
 
     private fun getRandomWord(): String {
         // create an ArrayList of words
-        val words = arrayListOf("apple", "banana", "cherry", "date", "elderberry")
+        val words = arrayListOf(
+            "love",
+            "city",
+            "nature",
+            "blue",
+            "spiderman",
+            "harrypotter",
+            "series",
+            "tech",
+        )
 
         val rand = Random()
         val randomIndex = rand.nextInt(words.size)
