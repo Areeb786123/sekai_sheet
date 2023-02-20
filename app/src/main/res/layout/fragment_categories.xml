@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/black">
 
     <TextView
         android:id="@+id/screenNameTextView"
@@ -14,7 +14,7 @@
         android:layout_marginTop="@dimen/size_10"
         android:fontFamily="@font/amaranth"
         android:text="@string/categories"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="@dimen/font_32"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

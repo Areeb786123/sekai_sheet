@@ -1,23 +1,79 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
+    android:background="@color/black"
     tools:context="com.areeb.sekaisheet.ui.spiningWheel.fragment.SpinnerFragment">
 
- <TextView
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:text="@string/chooseRandomText"
-     android:textColor="@color/black"
-     android:textSize="@dimen/font_24"
-     android:layout_marginTop="@dimen/size_20"
-     android:layout_marginStart="@dimen/size_10"
-     android:layout_marginEnd="@dimen/size_20"
-     android:fontFamily="@font/amaranth"
-     app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/chooseRandomTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_20"
+        android:layout_marginEnd="@dimen/size_20"
+        android:fontFamily="@font/amaranth"
+        android:text="@string/chooseRandomText"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/spinnerLotteAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_200"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_20"
+        android:layout_marginEnd="@dimen/size_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chooseRandomTextView"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/spinning_wheel_anim" />
+
+    <TextView
+        android:id="@+id/moodTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_40"
+        android:fontFamily="@font/amaranth"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_24"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerLotteAnimation" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_30"
+        android:src="@drawable/ic_moon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moodTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/spinnerButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_60"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_10"
+        android:layout_marginEnd="@dimen/size_10"
+        android:layout_marginBottom="@dimen/size_20"
+        android:background="@drawable/nav_bar_background"
+        android:text="@string/digIn"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_18"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

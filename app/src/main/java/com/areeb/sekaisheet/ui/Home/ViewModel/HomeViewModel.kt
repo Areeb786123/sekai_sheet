@@ -2,7 +2,6 @@ package com.areeb.sekaisheet.ui.Home.ViewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import com.areeb.sekaisheet.data.Resource
@@ -12,7 +11,6 @@ import com.areeb.sekaisheet.ui.base.viewModel.BaseViewModel
 import com.areeb.sekaisheet.utils.CollectionData.collectionTitle
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -32,7 +30,7 @@ class HomeViewModel @Inject constructor(
     private fun getWallpaperList() {
         viewModelScope.launch {
             setResource(Resource.Loading(true))
-            repository.getAllWallpapers(collectionTitle)
+            repository.getAllWallpapers(collectionTitle, viewModelScope)
                 .catch {
                     Resource.Error(
                         false,

@@ -11,11 +11,12 @@
     <string name="search">Search Wallpapers </string>
     <string name="searchWallpapers">Search any wallpapers 壁紙 </string>
     <string name="marvel">Marvel</string>
+    <string name="digIn">Dig Ride into it </string>
     <string name="categories">Categories</string>
     <string name="anime">Anime</string>
     <string name="amoled">Amoled</string>
     <string name="games">Games</string>
     <string name="nature">Nature</string>
-    <string name="chooseRandomText">PickUp you Wallpaper  types of the day </string>
+    <string name="chooseRandomText">PickUp you Wallpaper  type of the day </string>
     <string name="_abstract">Abstract</string>
 </resources>

@@ -1,5 +1,7 @@
 package com.areeb.sekaisheet.ui.base
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
@@ -15,6 +17,10 @@ open class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "Main Activity"
+        fun intent(context: Context) {
+            val intent = Intent(context, MainActivity::class.java)
+            context.startActivity(intent)
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

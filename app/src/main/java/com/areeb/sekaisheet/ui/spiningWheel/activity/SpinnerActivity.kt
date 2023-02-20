@@ -3,7 +3,9 @@ package com.areeb.sekaisheet.ui.spiningWheel.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sekaisheet.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SpinnerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
