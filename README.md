@@ -2,7 +2,8 @@
 
 Wallpaper app  and enjoy ad free experince 
 
-<img src="https://user-images.githubusercontent.com/56149022/210348186-d0f56251-8ab2-4079-937d-c15f32bcb6d9.gif" width="600" height="400">
+![sekai sheet-min](https://user-images.githubusercontent.com/56149022/220548026-021f4ffc-8605-4591-a0fa-59be52d08bde.jpg)
+
 
 
 
