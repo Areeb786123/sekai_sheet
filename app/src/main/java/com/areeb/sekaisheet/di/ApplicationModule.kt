@@ -15,11 +15,11 @@ object ApplicationModule {
     @Singleton
     @Provides
     fun provideHomeApi(
-        remoteDataSource: RemoteDataSource
+        remoteDataSource: RemoteDataSource,
     ): HomeApi {
         return remoteDataSource.buildApi(
             HomeApi::class.java,
-            "https://api.unsplash.com/"
+            "https://api.unsplash.com/",
         )
     }
 }

@@ -26,17 +26,17 @@ class SearchFragment : BaseFragment() {
     private var adapter: HomeAdapter? = null
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
         _fragmentBinding = FragmentSearchBinding.inflate(
             layoutInflater,
             container,
-            false
+            false,
         )
         setUpSearchView()
-
 
         return _fragmentBinding?.root
     }
@@ -62,7 +62,6 @@ class SearchFragment : BaseFragment() {
             adapter?.submitData(viewLifecycleOwner.lifecycle, it)
             fragmentBinding.searchAnimatedView.visible(false)
             fragmentBinding.searchRecyclerView.visible(true)
-
         }
     }
 
@@ -77,7 +76,6 @@ class SearchFragment : BaseFragment() {
                 newText?.let { viewModel.setWallpaper(it) }
                 return true
             }
-
         })
     }
 
@@ -86,14 +84,12 @@ class SearchFragment : BaseFragment() {
         showSoftwareKeyBoard()
     }
 
-
     private fun setUpSearchView() {
         fragmentBinding.searchView.let {
             it.isSubmitButtonEnabled = true
             it.onActionViewExpanded()
             it.isFocusable = true
         }
-
     }
 
     private fun showSoftwareKeyBoard() {
@@ -103,10 +99,8 @@ class SearchFragment : BaseFragment() {
         requireActivity().currentFocus?.let {
             inputManager.hideSoftInputFromWindow(
                 it.windowToken,
-                InputMethodManager.HIDE_NOT_ALWAYS
+                InputMethodManager.HIDE_NOT_ALWAYS,
             )
-
         }
-
     }
 }

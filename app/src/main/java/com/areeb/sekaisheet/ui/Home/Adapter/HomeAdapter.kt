@@ -10,14 +10,14 @@ import com.areeb.sekaisheet.ui.common.itemClick.ItemClickListener
 import com.example.sekaisheet.databinding.HomeItemBinding
 
 class HomeAdapter(
-    private val clickListener: ItemClickListener<WallpaperUnSplashDtoItem>
+    private val clickListener: ItemClickListener<WallpaperUnSplashDtoItem>,
 ) :
     PagingDataAdapter<WallpaperUnSplashDtoItem, HomeViewHolder>(DiffCallBack()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         val binding = HomeItemBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
-            false
+            false,
         )
         return HomeViewHolder(binding)
     }
@@ -26,7 +26,7 @@ class HomeAdapter(
         getItem(position)?.let {
             viewHolder.bind(
                 it,
-                clickListener
+                clickListener,
             )
         }
     }

@@ -17,11 +17,10 @@ class ProgressDialog @Inject constructor() : DialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
-
-        dialog?.setCanceledOnTouchOutside(false)// change it to false
-        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent);
+        dialog?.setCanceledOnTouchOutside(false) // change it to false
+        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
@@ -31,5 +30,4 @@ class ProgressDialog @Inject constructor() : DialogFragment() {
         builder.setView(binding.root)
         return builder.create()
     }
-
 }
