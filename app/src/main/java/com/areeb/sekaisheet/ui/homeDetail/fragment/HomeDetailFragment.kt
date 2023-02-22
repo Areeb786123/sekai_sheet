@@ -33,11 +33,15 @@ class HomeDetailFragment : BaseFragment(), View.OnClickListener {
     private val fragmentBinding get() = _fragmentBinding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
         _fragmentBinding = FragmentHomeDetailBinding.inflate(
-            layoutInflater, container, false
+            layoutInflater,
+            container,
+            false,
         )
 
         return _fragmentBinding?.root
@@ -52,7 +56,9 @@ class HomeDetailFragment : BaseFragment(), View.OnClickListener {
     private fun setObserver() {
         viewModel.wallpaperToSet.observe(viewLifecycleOwner) { wallpaperUrl ->
             setImageView(
-                fragmentBinding.wallpaperToSetImageView, wallpaperUrl, fragmentBinding.progressBar
+                fragmentBinding.wallpaperToSetImageView,
+                wallpaperUrl,
+                fragmentBinding.progressBar,
             )
         }
 
@@ -92,14 +98,18 @@ class HomeDetailFragment : BaseFragment(), View.OnClickListener {
         when (view.id) {
             fragmentBinding.setDownloadScreenImageView.id -> {
                 Toast.makeText(
-                    context, "This feature will available soon 😅", Toast.LENGTH_SHORT
+                    context,
+                    "This feature will available soon 😅",
+                    Toast.LENGTH_SHORT,
                 ).show()
             }
             fragmentBinding.setHomeScreenImageView.id -> {
                 context?.let {
                     activity?.let { activity ->
                         viewModel.setWallpaperToHomeScreen(
-                            it, activity.supportFragmentManager, true
+                            it,
+                            activity.supportFragmentManager,
+                            true,
                         )
                     }
                 }
@@ -109,22 +119,19 @@ class HomeDetailFragment : BaseFragment(), View.OnClickListener {
                 context?.let {
                     activity?.let { activity ->
                         viewModel.setWallpaperToHomeScreen(
-                            it, activity.supportFragmentManager, false
+                            it,
+                            activity.supportFragmentManager,
+                            false,
                         )
-
                     }
                 }
             }
-
-
         }
     }
-
 
     private fun setViewOnClickListener() {
         fragmentBinding.setHomeScreenImageView.setOnClickListener(this)
         fragmentBinding.setLockScreenImageView.setOnClickListener(this)
         fragmentBinding.setDownloadScreenImageView.setOnClickListener(this)
     }
-
 }

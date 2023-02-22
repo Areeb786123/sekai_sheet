@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">SekaiSheet</string>
+    <string name="app_name">SékaiShéet</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search_hint">Search Kabegami 壁紙 here</string>
     <string name="appName">SekaiSheet</string>
     <string name="wallpaperImage">Wallpaper Image</string>
+    <string name="crafted">Crafted with love By Areeb ❤️</string>
     <string name="settingUpTitle">Wallpaper is processing
     </string>
     <string name="settingUpWallpaper">Your highQuality wallpaper is under process to set please hold a little to enjoy.</string>
