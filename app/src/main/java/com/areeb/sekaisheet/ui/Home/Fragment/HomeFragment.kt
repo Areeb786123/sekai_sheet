@@ -86,6 +86,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
     }
 
     private fun setResourceStatus(resource: Resource<Any?>) {
+        Log.e("hh", resource.toString())
         when (resource) {
             is Resource.Success -> {
                 fragmentBinding.homeRecyclerView.visible(true)
