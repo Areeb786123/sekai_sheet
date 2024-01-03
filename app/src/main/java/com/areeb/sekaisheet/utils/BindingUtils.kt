@@ -25,7 +25,7 @@ fun setImageView(imageView: ImageView, imageUrl: String?, lotteAnimation: Lottie
                     e: GlideException?,
                     model: Any?,
                     target: Target<Drawable>?,
-                    isFirstResource: Boolean
+                    isFirstResource: Boolean,
                 ): Boolean {
                     lotteAnimation?.visible(true)
                     return true
@@ -36,18 +36,16 @@ fun setImageView(imageView: ImageView, imageUrl: String?, lotteAnimation: Lottie
                     model: Any?,
                     target: Target<Drawable>?,
                     dataSource: DataSource?,
-                    isFirstResource: Boolean
+                    isFirstResource: Boolean,
                 ): Boolean {
                     lotteAnimation?.visible(false)
                     return false
                 }
-
             })
             .apply {
                 RequestOptions()
                     .error(R.drawable.not_able_to_relocate)
             }
             .into(imageView)
-
     }
 }
