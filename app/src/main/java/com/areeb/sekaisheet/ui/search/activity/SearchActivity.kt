@@ -6,7 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import com.areeb.sekaisheet.ui.base.MainActivity
-import com.example.sekaisheet.R
+import com.areeb.sekaisheet.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

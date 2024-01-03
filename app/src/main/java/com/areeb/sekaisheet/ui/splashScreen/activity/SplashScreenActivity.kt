@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
+import com.areeb.sekaisheet.R
 import com.areeb.sekaisheet.ui.spiningWheel.activity.SpinnerActivity
-import com.example.sekaisheet.R
 
 class SplashScreenActivity : AppCompatActivity() {
     companion object {

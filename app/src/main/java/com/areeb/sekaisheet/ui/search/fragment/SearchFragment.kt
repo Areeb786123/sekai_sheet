@@ -8,13 +8,13 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
+import com.areeb.sekaisheet.databinding.FragmentSearchBinding
 import com.areeb.sekaisheet.ui.Home.Adapter.HomeAdapter
 import com.areeb.sekaisheet.ui.base.fragment.BaseFragment
 import com.areeb.sekaisheet.ui.common.itemClick.ItemClickListener
 import com.areeb.sekaisheet.ui.homeDetail.activity.HomeDetailActivity
 import com.areeb.sekaisheet.ui.search.viewModel.SearchViewModel
 import com.areeb.sekaisheet.utils.visible
-import com.example.sekaisheet.databinding.FragmentSearchBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

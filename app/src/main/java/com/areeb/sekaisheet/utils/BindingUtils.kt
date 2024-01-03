@@ -11,7 +11,7 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
-import com.example.sekaisheet.R
+import com.areeb.sekaisheet.R
 
 @SuppressLint("CheckResult")
 fun setImageView(imageView: ImageView, imageUrl: String?, lotteAnimation: LottieAnimationView?) {

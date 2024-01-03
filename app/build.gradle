@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.sekaisheet'
+    namespace 'com.areeb.sekaisheet'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.sekaisheet"
+        applicationId "com.areeb.sekaisheet"
         minSdk 21
         targetSdk 33
         versionCode 1

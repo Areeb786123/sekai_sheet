@@ -2,7 +2,7 @@ package com.areeb.sekaisheet.ui.spiningWheel.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.sekaisheet.R
+import com.areeb.sekaisheet.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

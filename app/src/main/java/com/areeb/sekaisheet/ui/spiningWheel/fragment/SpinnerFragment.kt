@@ -6,14 +6,14 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.areeb.sekaisheet.databinding.FragmentSpinnerBinding
 import com.areeb.sekaisheet.ui.base.MainActivity
 import com.areeb.sekaisheet.ui.base.fragment.BaseFragment
 import com.areeb.sekaisheet.utils.CollectionData.moodSingletonText
 import com.areeb.sekaisheet.utils.visible
-import com.example.sekaisheet.databinding.FragmentSpinnerBinding
 import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONObject
-import java.util.*
+import java.util.Random
 
 @AndroidEntryPoint
 class SpinnerFragment : BaseFragment(), View.OnClickListener {

@@ -10,11 +10,11 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.viewModels
 import com.areeb.sekaisheet.data.Resource
+import com.areeb.sekaisheet.databinding.FragmentHomeDetailBinding
 import com.areeb.sekaisheet.ui.base.fragment.BaseFragment
 import com.areeb.sekaisheet.ui.homeDetail.dialog.ProgressDialog
 import com.areeb.sekaisheet.ui.homeDetail.viewModel.HomeDetailViewModel
 import com.areeb.sekaisheet.utils.setImageView
-import com.example.sekaisheet.databinding.FragmentHomeDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

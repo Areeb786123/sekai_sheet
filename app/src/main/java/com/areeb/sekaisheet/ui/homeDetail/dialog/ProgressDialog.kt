@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.example.sekaisheet.databinding.AlterDialogueLayoutBinding
+import com.areeb.sekaisheet.databinding.AlterDialogueLayoutBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

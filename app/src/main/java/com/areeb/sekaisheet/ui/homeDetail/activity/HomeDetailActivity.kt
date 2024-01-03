@@ -4,9 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
+import com.areeb.sekaisheet.R
 import com.areeb.sekaisheet.ui.base.MainActivity
 import com.areeb.sekaisheet.utils.Constants.ActivityToFragment.Companion.WALLPAPER_ID
-import com.example.sekaisheet.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
