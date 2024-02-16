@@ -20,6 +20,7 @@ In this project we will learn how to use paging 3 with Retrofit library.</p>
 
 
 </br>
-![MacBook Air - 1 (1)](https://github.com/Areeb786123/sekai_sheet/assets/56149022/c8c305e5-ef5c-4263-b11a-e97ca49e13cf)
+![MacBook Air - 1 (1)](https://github.com/Areeb786123/sekai_sheet/assets/56149022/34e6d60f-3612-464a-9ad2-8510588e0a94)
+
 
 
