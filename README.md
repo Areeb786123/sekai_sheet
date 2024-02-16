@@ -5,7 +5,8 @@ Wallpaper app  and enjoy ad free experince
 
 
 
-![Uploading back blur feature.png…]()
+
+![back blur feature](https://github.com/Areeb786123/sekai_sheet/assets/56149022/8f5ea001-a761-4e3c-a462-e3272502a1bb)
 
 
 
@@ -19,5 +20,6 @@ In this project we will learn how to use paging 3 with Retrofit library.</p>
 
 
 </br>
-![MacBook Air - 1 (1)](https://github.com/Areeb786123/sekai_sheet/assets/56149022/53400c0e-c339-4c28-85c5-8b62f2212fb2)
+![MacBook Air - 1 (1)](https://github.com/Areeb786123/sekai_sheet/assets/56149022/c8c305e5-ef5c-4263-b11a-e97ca49e13cf)
+
 
