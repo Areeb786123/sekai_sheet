@@ -2,8 +2,10 @@
 
 Wallpaper app  and enjoy ad free experince 
 
-![sekai sheet-min](https://user-images.githubusercontent.com/56149022/220548026-021f4ffc-8605-4591-a0fa-59be52d08bde.jpg)
 
+
+
+![Uploading back blur feature.png…]()
 
 
 
@@ -14,3 +16,8 @@ MVVM + Daggger-Hilt + Retrofit + Sealed Class + State Flow + Coroutines In this 
 <p>The Paging library helps you load and display pages of data from a larger dataset from local storage or over network. This approach allows your app to use both network bandwidth and system resources more efficiently. The components of the Paging library are designed to fit into the recommended Android app architecture, integrate cleanly with other Jetpack components, and provide first-class Kotlin support.
 
 In this project we will learn how to use paging 3 with Retrofit library.</p>
+
+
+</br>
+![MacBook Air - 1 (1)](https://github.com/Areeb786123/sekai_sheet/assets/56149022/53400c0e-c339-4c28-85c5-8b62f2212fb2)
+
