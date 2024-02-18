@@ -22,7 +22,8 @@
         tools:targetApi="31">
         <activity
             android:name="com.areeb.sekaisheet.ui.splashScreen.activity.SplashScreenActivity"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,7 +32,8 @@
         </activity>
         <activity
             android:name="com.areeb.sekaisheet.ui.spiningWheel.activity.SpinnerActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTop" />
         <activity
             android:name="com.areeb.sekaisheet.ui.search.activity.SearchActivity"
             android:exported="false">

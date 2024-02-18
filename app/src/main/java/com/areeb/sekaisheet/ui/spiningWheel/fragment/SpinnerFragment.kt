@@ -71,6 +71,11 @@ class SpinnerFragment : BaseFragment(), View.OnClickListener {
 
     private fun runMoodSpinner() {
         fragmentBinding.spinnerLotteAnimation.playAnimation()
+        fragmentBinding.spinnerButton.let {
+            it.isClickable = false
+            it.isEnabled = false
+            it.isFocusable = false
+        }
         handler.postDelayed({
             fragmentBinding.spinnerLotteAnimation.visible(false)
             fragmentBinding.moodTextView.visible(true)

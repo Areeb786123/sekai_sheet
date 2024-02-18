@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.areeb.sekaisheet.data.Resource
+import com.areeb.sekaisheet.databinding.FragmentHomeBinding
 import com.areeb.sekaisheet.ui.Home.Adapter.HomeAdapter
 import com.areeb.sekaisheet.ui.Home.ViewModel.HomeViewModel
 import com.areeb.sekaisheet.ui.base.fragment.BaseFragment
 import com.areeb.sekaisheet.ui.common.itemClick.ItemClickListener
 import com.areeb.sekaisheet.ui.homeDetail.activity.HomeDetailActivity
 import com.areeb.sekaisheet.utils.visible
-import com.example.sekaisheet.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

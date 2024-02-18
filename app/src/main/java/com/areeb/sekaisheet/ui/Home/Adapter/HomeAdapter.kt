@@ -7,7 +7,7 @@ import com.areeb.sekaisheet.data.models.unsplashModels.WallpaperUnSplashDtoItem
 import com.areeb.sekaisheet.ui.Home.viewHolder.HomeViewHolder
 import com.areeb.sekaisheet.ui.common.diffCallBack.DiffCallBack
 import com.areeb.sekaisheet.ui.common.itemClick.ItemClickListener
-import com.example.sekaisheet.databinding.HomeItemBinding
+import com.areeb.sekaisheet.databinding.HomeItemBinding
 
 class HomeAdapter(
     private val clickListener: ItemClickListener<WallpaperUnSplashDtoItem>,

@@ -12,7 +12,7 @@ import com.areeb.sekaisheet.ui.Category.viewModel.CollectionViewModel
 import com.areeb.sekaisheet.ui.base.fragment.BaseFragment
 import com.areeb.sekaisheet.ui.common.itemClick.ItemClickListener
 import com.areeb.sekaisheet.utils.CollectionData.collectionTitle
-import com.example.sekaisheet.databinding.FragmentCategoriesBinding
+import com.areeb.sekaisheet.databinding.FragmentCategoriesBinding
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 

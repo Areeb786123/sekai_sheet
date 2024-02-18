@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.areeb.sekaisheet.data.models.collectionsModel.CollectionDto
 import com.areeb.sekaisheet.ui.common.itemClick.ItemClickListener
 import com.areeb.sekaisheet.utils.setImageView
-import com.example.sekaisheet.databinding.CollectionsItemsBinding
+import com.areeb.sekaisheet.databinding.CollectionsItemsBinding
 
 class CollectionViewHolder(private val bindingAdapter: CollectionsItemsBinding) :
     RecyclerView.ViewHolder(bindingAdapter.root), View.OnClickListener {

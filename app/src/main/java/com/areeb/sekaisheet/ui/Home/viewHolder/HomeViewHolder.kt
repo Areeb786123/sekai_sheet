@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.areeb.sekaisheet.data.models.unsplashModels.WallpaperUnSplashDtoItem
 import com.areeb.sekaisheet.ui.common.itemClick.ItemClickListener
 import com.areeb.sekaisheet.utils.setImageView
-import com.example.sekaisheet.databinding.HomeItemBinding
+import com.areeb.sekaisheet.databinding.HomeItemBinding
 
 class HomeViewHolder(private val bindingAdapter: HomeItemBinding) :
     RecyclerView.ViewHolder(bindingAdapter.root), View.OnClickListener {
