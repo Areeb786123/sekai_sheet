@@ -19,7 +19,6 @@ class SearchViewModel @Inject constructor(
     val getSearchQueryList = _searchQuery.switchMap {
         repository.getSearchedWallpaper(it).cachedIn(viewModelScope)
     }
-
     fun setWallpaper(query: String) {
         _searchQuery.value = query
     }

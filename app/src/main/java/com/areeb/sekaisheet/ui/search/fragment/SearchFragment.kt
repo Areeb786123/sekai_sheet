@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import com.areeb.sekaisheet.databinding.FragmentSearchBinding
@@ -53,7 +54,7 @@ class SearchFragment : BaseFragment() {
         fragmentBinding.searchRecyclerView.adapter = adapter
     }
 
-    fun onWallpaperSelectClick(wallpaperId: String) {
+    private fun onWallpaperSelectClick(wallpaperId: String) {
         HomeDetailActivity.newIntent(requireContext(), wallpaperId)
     }
 
@@ -68,15 +69,40 @@ class SearchFragment : BaseFragment() {
     private fun searchQuery() {
         fragmentBinding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                query?.let { viewModel.setWallpaper(it) }
+                query?.let {
+                    if (isSearchAllowed(it)) {
+                        viewModel.setWallpaper(it)
+                    } else {
+                        // Display toast message indicating adult content is not allowed
+                        Toast.makeText(context, "Adult content is not allowed", Toast.LENGTH_SHORT).show()
+                    }
+                }
                 return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                newText?.let { viewModel.setWallpaper(it) }
+                newText?.let {
+                    if (isSearchAllowed(it)) {
+                        viewModel.setWallpaper(it)
+                    } else {
+                        // Display toast message indicating adult content is not allowed
+                        Toast.makeText(context, "Adult content is not allowed", Toast.LENGTH_SHORT).show()
+                    }
+                }
                 return true
             }
         })
+    }
+
+    private fun isSearchAllowed(query: String): Boolean {
+        // Define your criteria to check if the query contains adult content
+        val prohibitedWords = listOf("naked", "sex", "porn")
+        for (word in prohibitedWords) {
+            if (query.contains(word, ignoreCase = true)) {
+                return false
+            }
+        }
+        return true
     }
 
     override fun onDetach() {
